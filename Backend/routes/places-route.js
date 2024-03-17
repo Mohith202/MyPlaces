@@ -21,7 +21,7 @@ router.post(
     placeController.createplace)
 
 
-router.patch("/:pid", placeController.updateplace)
+router.patch("/:pid",[check("title").not().isEmpty(),check("description").isLength({min:5})], placeController.updateplace)
 
 router.delete("/:pid", placeController.deletePlaceById)
 

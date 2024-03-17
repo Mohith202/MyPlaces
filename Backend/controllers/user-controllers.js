@@ -1,5 +1,7 @@
 const {v4:uuidv4}=require("uuid")
 
+const {validationResult}=require("express-validator")
+
 const HttpError=require("../model/http-error")
 
 let DUMMY_PLACES=[{
@@ -19,6 +21,11 @@ const getuserList=(req,res,next)=>{
 }
 
 const Newusersignup=(req,res,next)=>{
+    const errors=validationResult
+    if (errors){
+        console.log(errors)
+        return next(new HttpError("Enter correct credinctioal",422))
+    }
     const {user,email,password}=req.body;
     const hasuser=DUMMY_PLACES.find(p=>{
         if (email===p.email){

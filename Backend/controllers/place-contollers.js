@@ -1,6 +1,7 @@
 const HttpError=require("../model/http-error")
-const {validationResult}=require("express-validator")
+const coordinate=require("../model/Location")
 
+const {validationResult}=require("express-validator")
 const {v4:uuidv4}=require("uuid")
 
 let DUMMY_PLACES=[{
@@ -73,12 +74,12 @@ const Createplace=(req,res,next)=>{
     if (!errors.isEmpty()){
         return next(new HttpError("Not correct.Enter propeer data",422))
     }
-    const {title,desc,coordinate,address,creator}=req.body
+    const {title,desc,address,creator}=req.body
     const createdplace={
         id:uuidv4(),
         title,
         description:desc,
-        location:coordinate,
+        location:coordinate(address),
         address,
         creator
     };
@@ -91,6 +92,11 @@ const Createplace=(req,res,next)=>{
 
 
 const Updateplace=(req,res,next)=>{
+    const errors=validationResult(req);
+    if (!errors.isEmpty()){
+        console.log(errors)
+        return next(new HttpError("Not correct.Enter propeer data",422))
+    }
     const {title,description}=req.body
     const PlaceId=req.params.pid
     const updatedplace={...DUMMY_PLACES.find(p=>{
@@ -117,6 +123,9 @@ const Updateplace=(req,res,next)=>{
 const deletePlaceById=(req,res,next)=>{
     const PlaceId=req.params.pid
     const deletePlace=DUMMY_PLACES.find(p=>p.id === PlaceId)
+    if(!deletePlace){
+        return next(new HttpError("Place not found witn id",422))
+    }
     DUMMY_PLACES=DUMMY_PLACES.filter(p=>p.id !== PlaceId)
     res.status(200).json({message:"done"})
 
