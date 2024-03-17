@@ -1,0 +1,38 @@
+.Navbar_item li {
+    list-style: none;
+    color:white   !important;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px 3rem;
+    margin: 5px 5px 5px 2px;
+    align-items: end;
+    cursor: pointer;
+}
+.Navbar_item a{
+    text-decoration: none;
+    list-style: none;
+    color:white;
+}
+
+.Navbar_item{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    height: 100%;
+    margin: 0rem 0rem 5px 0rem;
+    padding:0rem ;
+}
+.Navbar_item a:hover{
+ 
+        background-color: green;
+        border-radius: 10rem;
+        cursor: pointer;
+    }
+
+.Navbar_item li:active,
+.Navbar_item li:visited 
+{
+    background-color: green;
+    border-radius: 10rem;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.buttonClass button{
+    margin: 0.6rem;
+    background-color: blue;
+    border-radius: 1rem;
+   width:10%;
+    padding:0.5rem;
+}
+.buttonClass button:active,
+.buttonClass button:hover{
+  
+    background-color: rgb(28, 28, 173);
+    
+}

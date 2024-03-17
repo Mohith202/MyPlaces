@@ -1,0 +1,11 @@
+.input{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    width:50%;
+}
+label{
+    text-align: left;
+    font-weight: 700;
+    margin:1rem 0rem 0rem 0rem;
+}

@@ -1,0 +1,18 @@
+.loginpage{
+    padding-top:4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 45vw;
+    margin:auto;
+}
+
+.footer_login{
+    display: inline;
+    margin-top: 1rem;
+}
+.footer_login li, ul{
+    display: inline;
+    text-decoration: none;
+    color:blue;
+}

@@ -1,0 +1,14 @@
+.card_layout{
+    margin:1rem auto;
+    align-items: center;
+    /* width:80%; */
+    /* Height:75%; */
+    padding: 2rem 0rem;
+    /* border:10px solid blue; */
+    /* background-color: green; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width:80%;
+    height:20%;
+}
