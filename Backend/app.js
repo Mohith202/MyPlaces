@@ -1,5 +1,6 @@
 const express=require("express");
 const bodyParser=require('body-parser');
+const mongoose=require("mongoose")
 
 const place=require("./routes/places-route")
 
@@ -31,4 +32,16 @@ app.use((error,req,res,next)=>{
     }
 })
 
-app.listen(3000);
+
+
+const password=encodeURIComponent("Saroj@2002")
+const uri = `mongodb+srv://20eg103319:${password}@mydata.bkwkloc.mongodb.net/?retryWrites=true&w=majority&appName=MyData`;
+
+mongoose.
+connect(uri).
+then((req,res,next)=>{
+    app.listen(3000);
+    console.log("connected")
+}
+).
+catch()
