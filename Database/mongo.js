@@ -1,6 +1,6 @@
 const MongoClient=require("mongodb").MongoClient;
 
-const password=encodeURIComponent("Saroj@2002")
+
 
 const { urlencoded } = require('body-parser');
 

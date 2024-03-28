@@ -34,7 +34,7 @@ app.use((error,req,res,next)=>{
 
 
 
-const password=encodeURIComponent("Saroj@2002")
+
 const uri = `mongodb+srv://20eg103319:${password}@mydata.bkwkloc.mongodb.net/?retryWrites=true&w=majority&appName=MyData`;
 
 mongoose.
