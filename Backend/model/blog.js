@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-mongoose.connect("mongodb+srv://20eg103319:<Saroj@2002>@mydata.bkwkloc.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://username:<pass>@mydata.bkwkloc.mongodb.net/?retryWrites=true&w=majority")
 
 const blogSchema = new Schema({
   title: String,
